@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Atualizar Aluno</title>
+</head>
+<body>
+    <h2>Atualizar Aluno</h2>
+    <form method="post" action="{% url 'atualizar_aluno' aluno.id %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Atualizar</button>
+    </form>
+    <a href="{% url 'lista_alunos' %}">Cancelar e voltar para a lista de alunos</a>
+</body>
+</html>

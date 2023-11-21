@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Alunos</title>
+</head>
+<body>
+    <h2>Lista de Alunos</h2>
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li>{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <ul>
+        {% for aluno in alunos %}
+            <li>
+                {{ aluno.nome }} - {{ aluno.matricula }} - {{ aluno.curso }}
+                <a href="{% url 'excluir_aluno' aluno.id %}">Excluir</a>
+                <a href="{% url 'detalhes_aluno' aluno.id %}">Detalhes</a>
+                <a href="{% url 'atualizar_aluno' aluno.id %}">Atualizar</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
