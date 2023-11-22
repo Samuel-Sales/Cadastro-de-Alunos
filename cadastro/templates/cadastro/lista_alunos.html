@@ -11,7 +11,7 @@
     {% if messages %}
         <ul class="messages">
             {% for message in messages %}
-                <li>{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                <!-- <li>{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li> -->
             {% endfor %}
         </ul>
     {% endif %}
@@ -25,5 +25,6 @@
             </li>
         {% endfor %}
     </ul>
+    <a href="{% url 'pagina_principal' %}">Voltar para a Página Principal</a>
 </body>
 </html>
