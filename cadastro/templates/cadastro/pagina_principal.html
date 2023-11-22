@@ -1,11 +1,16 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="{% static 'css/pagina_principal.css' %}">
     <title>Cadastro de Aluno</title>
 </head>
 <body>
-    <h1>Cadastro de Aluno</h1>
-    <a href="{% url 'lista_alunos' %}"><button>Alunos cadastrados</button></a>
-    <a href="{% url 'cadastrar_aluno' %}"><button>Cadastrar novo aluno</button></a>
+    <div class="container">
+        <h1>Cadastro de Aluno</h1>
+        <a href="{% url 'lista_alunos' %}"><button>Alunos cadastrados</button></a>
+        <a href="{% url 'cadastrar_aluno' %}"><button>Cadastrar novo aluno</button></a>
+    </div>
 </body>
 </html>
