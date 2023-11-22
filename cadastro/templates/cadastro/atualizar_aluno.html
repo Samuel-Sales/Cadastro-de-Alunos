@@ -1,6 +1,9 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="{% static 'css/atualizar_aluno.css' %}">
     <title>Atualizar Aluno</title>
 </head>
 <body>
@@ -10,6 +13,8 @@
         {{ form.as_p }}
         <button type="submit">Atualizar</button>
     </form>
-    <a href="{% url 'lista_alunos' %}">Cancelar e voltar para a lista de alunos</a>
+    <div>
+        <a href="{% url 'lista_alunos' %}">Cancelar e voltar para a lista de alunos</a>
+    </div>
 </body>
 </html>

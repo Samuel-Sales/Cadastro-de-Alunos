@@ -1,0 +1,16 @@
+body {
+    background: #B0926A;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+a {
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 1em;
+    text-decoration: none;
+    background: #706233;
+    color: white;
+}
