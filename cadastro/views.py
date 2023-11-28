@@ -71,3 +71,22 @@ def cadastrar_curso(request) :
 def listar_cursos(request) :
     cursos = Curso.objects.all()
     return render(request, 'cadastro/listar_cursos.html', {'cursos': cursos})
+
+# DELETE DO CURSO
+def excluir_curso(request, curso_id) :
+    curso = get_object_or_404(Curso, id = curso_id)
+    curso.delete()
+    return redirect('listar_cursos')
+
+# EDITAR CURSO
+def editar_curso(request, curso_id) :
+    curso = get_object_or_404(Curso, id = curso_id)
+
+    if request.method == 'POST' :
+        form = CursoForm(request.POST, instance = curso)
+        if form.is_valid() :
+            form.save()
+            return redirect('listar_cursos')
+    else :
+        form = CursoForm(instance = curso)
+    return render(request, 'cadastro/editar_curso.html', {'form': form})
