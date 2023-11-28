@@ -1,0 +1,29 @@
+body {
+    background: #8E8FFA;
+}
+
+button {
+    border: none;
+    border-radius: 4px;
+    padding: 1em;
+    cursor: pointer;
+    background: #7752FE;
+    color: white;
+}
+
+button:hover {
+    background: #9a83ee;
+}
+
+a {
+    margin-top: 20px;
+    border-radius: 4px;
+    background: #7752FE;
+    color: white;
+    text-decoration: none;
+    padding: 1em;
+}
+
+div {
+    display: flex;
+}

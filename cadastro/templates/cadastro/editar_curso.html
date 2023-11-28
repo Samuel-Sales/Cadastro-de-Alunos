@@ -1,6 +1,9 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="{% static 'css/editar_curso.css' %}">
     <title>Editar Curso</title>
 </head>
 <body>
@@ -10,6 +13,8 @@
         {{ form.as_p }}
         <button type="submit">Salvar Edições</button>
     </form>
-    <a href="{% url 'listar_cursos' %}">Voltar para Listagem de Cursos</a>
+    <div>
+        <a href="{% url 'listar_cursos' %}">Voltar para Listagem de Cursos</a>
+    </div>
 </body>
 </html>
