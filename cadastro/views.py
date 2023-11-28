@@ -1,13 +1,17 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
-from .models import Aluno
-from .forms import AlunoForm
+from .models import Aluno, Curso
+from .forms import AlunoForm, CursoForm
 
 # Create your views here.
 
 # PAGINA PRINCIPAL
 def pagina_principal(request) :
-    return render(request, 'cadastro/pagina_principal.html')
+    contexto = {
+        'url_cadastrar_curso': 'cadastrar_curso',
+        'url_listar_cursos': 'listar_cursos'
+    }
+    return render(request, 'cadastro/pagina_principal.html', contexto)
 
 # CADASTRO DE ALUNOS
 def cadastrar_aluno(request) :
@@ -51,3 +55,19 @@ def atualizar_aluno(request, aluno_id) :
     else :
         form = AlunoForm(instance = aluno)
     return render(request, 'cadastro/atualizar_aluno.html', {'form': form, 'aluno': aluno})
+
+# CADASTRO DE CURSOS
+def cadastrar_curso(request) :
+    if request.method == 'POST' :
+        form = CursoForm(request.POST)
+        if form.is_valid() :
+            form.save()
+            return redirect('listar_cursos')
+    else :
+        form = CursoForm()
+    return render(request, 'cadastro/cadastrar_curso.html', {'form': form})
+
+# LISTAGEM DOS CURSOS
+def listar_cursos(request) :
+    cursos = Curso.objects.all()
+    return render(request, 'cadastro/listar_cursos.html', {'cursos': cursos})
