@@ -11,8 +11,8 @@
     <ul>
         {% for curso in cursos %}
             <li>{{ curso.nome }} - {{ curso.descricao }}</li>
-            <a href="{% url 'excluir_curso' curso.id %}">Excluir</a>
-            <a href="{% url 'editar_curso' curso.id %}">Editar</a>
+            <a class="botaoExcluir" href="{% url 'excluir_curso' curso.id %}">Excluir</a>
+            <a class="botaoEditar" href="{% url 'editar_curso' curso.id %}">Editar</a>
         {% endfor %}
     </ul>
     <a href="{% url 'cadastrar_curso' %}">Cadastrar Novo Curso</a>
